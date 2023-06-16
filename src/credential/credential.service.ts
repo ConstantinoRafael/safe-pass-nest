@@ -29,7 +29,7 @@ export class CredentialService {
 
   async get(userId: number, id: number) {
     const credential = await this.credentialRepository.get(userId, id);
-    if (credential) throw new NotFoundException();
+    if (!credential) throw new NotFoundException();
 
     return {
       ...credential,
