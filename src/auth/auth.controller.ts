@@ -9,7 +9,7 @@ export class AuthController {
   @Post('sign-in')
   async signIn(@Body() body: AuthLoginDTO) {
     const { email, password } = body;
-    this.authService.signIn(email, password);
+    return this.authService.signIn(email, password);
   }
 
   @Post('sign-up')
